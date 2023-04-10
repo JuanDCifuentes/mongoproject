@@ -1,0 +1,4 @@
+#carpera de modulos
+node_modules
+
+.env
