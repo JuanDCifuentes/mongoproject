@@ -31,16 +31,16 @@ router.get('/peliculas/:id', (req, res) => {
 })
 
 
-// router.put('/peliculas/:id', (req, res) => {
-//     const { id } = req.params;
-//     const {datos }= req.body;
+router.put('/peliculas/:id', (req, res) => {
+    const { id } = req.params;
+    const {titulo, director, calificacion, genero, year,sipnosis, duracion, actores }= req.body;
 
-//     peliculaSchema
-//         .updateOne({_id: id }, { $set:{ titulo, age, email} })
-//         .then((data) => res.json(data))
-//         .catch((error) => res.json({messege: error}));
+    peliculaSchema
+        .updateOne({_id: id }, { $set:{ titulo, director, calificacion, genero, year,sipnosis, duracion, actores} })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({messege: error}));
     
-// })
+})
 
 // borrar un usuario
 router.delete('/peliculas/:id', (req, res) => {
